@@ -1,4 +1,4 @@
-export default async function handler(action, options) {
+export default async function handler(action, params) {
   const result = await fetch(
     `https://ap-southeast-1.aws.data.mongodb-api.com/app/data-omhrb/endpoint/data/v1/action/${action}`,
     {
@@ -12,7 +12,7 @@ export default async function handler(action, options) {
         dataSource: "Cluster0",
         database: "postDb",
         collection: "posts",
-        ...options,
+        ...params,
       }),
     }
   ).then((res) => res.json());
