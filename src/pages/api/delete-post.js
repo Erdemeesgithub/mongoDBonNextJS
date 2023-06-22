@@ -5,8 +5,11 @@ export default async function handler(req, res) {
     res.status(405).end();
     return;
   }
+  const { id } = req.query;
+  console.log(req.query);
+
   const result = await MongoDBreq("deleteOne", {
-    filter: { _id: { $oid: "649288a1cc8f62c436e9adfa" } },
+    filter: { _id: { $oid: id } },
   });
 
   console.log(result);

@@ -5,9 +5,12 @@ export default async function handler(req, res) {
     res.status(405).end();
     return;
   }
+  const { text } = req.body;
+  console.log(req.body);
+
   const result = await MongoDBreq("insertOne", {
     document: {
-      text: "Do Ur Job",
+      text: text,
     },
   });
 

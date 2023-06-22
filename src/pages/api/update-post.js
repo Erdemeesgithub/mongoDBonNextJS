@@ -5,11 +5,15 @@ export default async function handler(req, res) {
     res.status(405).end();
     return;
   }
+
+  const { id } = req.query;
+  const { text } = req.body;
+
   const result = await MongoDBreq("updateOne", {
-    filter: { _id: { $oid: "649288b5cc8f62c436e9adfb" } },
+    filter: { _id: { $oid: id } },
     update: {
       $set: {
-        text: "where are you??",
+        text: text,
       },
     },
   });

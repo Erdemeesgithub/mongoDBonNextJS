@@ -1,6 +1,11 @@
 
 
 POST http://localhost:3000/api/create-post
+content-type: application/json
+
+{
+    "text": "dudeish"
+}
 
 ###
 
@@ -8,8 +13,13 @@ GET http://localhost:3000/api/get-posts
 
 
 ###
-DELETE http://localhost:3000/api/delete-post
+DELETE http://localhost:3000/api/delete-post?id=6493dcedac0e4c3bb7a71031
 
 ###
 
-PUT http://localhost:3000/api/update-post
+PUT http://localhost:3000/api/update-post?id=6493ddf6c087afa43c77093d
+content-type: application/json
+
+{
+    "text": "dudeish"
+}
