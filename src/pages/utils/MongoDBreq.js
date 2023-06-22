@@ -1,8 +1,6 @@
-import { headers } from "../../../next.config";
-
-export default async function handler(req, res) {
+export default async function handler(action, options) {
   const result = await fetch(
-    "https://ap-southeast-1.aws.data.mongodb-api.com/app/data-omhrb/endpoint/data/v1/action/find",
+    `https://ap-southeast-1.aws.data.mongodb-api.com/app/data-omhrb/endpoint/data/v1/action/${action}`,
     {
       method: "POST",
       headers: {
@@ -14,9 +12,10 @@ export default async function handler(req, res) {
         dataSource: "Cluster0",
         database: "postDb",
         collection: "posts",
+        ...options,
       }),
     }
   ).then((res) => res.json());
 
-  res.status(200).json(result);
+  return result;
 }
