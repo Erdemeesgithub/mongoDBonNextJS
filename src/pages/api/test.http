@@ -1,4 +1,6 @@
+GET http://localhost:3000/api/get-posts
 
+###
 
 POST http://localhost:3000/api/create-post
 content-type: application/json
@@ -6,11 +8,6 @@ content-type: application/json
 {
     "text": "dudeish"
 }
-
-###
-
-GET http://localhost:3000/api/get-posts
-
 
 ###
 DELETE http://localhost:3000/api/delete-post?id=6493dcedac0e4c3bb7a71031
