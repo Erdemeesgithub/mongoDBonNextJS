@@ -10,7 +10,7 @@ content-type: application/json
 }
 
 ###
-DELETE http://localhost:3000/api/delete-post?id=6493dcedac0e4c3bb7a71031
+DELETE http://localhost:3000/api/delete-post?id=649923ea9d13dfee9b44c791
 
 ###
 
